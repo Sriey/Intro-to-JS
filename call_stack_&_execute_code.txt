@@ -1,0 +1,79 @@
+Execution context & Call Stack
+Javascript is a single threaded languaage
+Javascript Execution context
+{}
+things which are formed 1st during execution of a webpage executed in a thread
+    1st). Global execution Context and is reffered to (this) variable context
+            for browser context it is window .other such as deno or  node has diffrent
+             context.
+    2nd). functional execution context
+    3rd). Eval execution Context(eg in mongoose)
+Javascript is executed in 2 phase 
+    1st). Memory creation phase(or creation phase) only memory is allocated during 
+          this phase
+    2nd). Execution Phase
+
+
+example
+let val1=10
+let val2=20
+
+function addNum(num1,num2){
+  let total =num1+num2
+return total
+}
+let result1 = addNum(val1,val2)
+let result2 = addNum(10,2)
+
+1 global Execution (this)
+2 memory phase{
+    val1 undefined
+    val2undefined
+     added to the site
+    addNew definition
+    result1 undefined 
+    result 2 undefined
+}
+3 execution phase{
+    val1 10
+    val2 5
+    addnumber (new executional context){
+        
+        new variableenv
+        +
+        executional thread
+        {
+            2nd
+            Again memory phase
+            {
+                val1 undefined
+                val2 undefined
+                total undefined
+            }
+            3rd 
+            again execution context{
+                val1 10
+                val2 5
+                total 15
+            }
+        }
+
+        
+    }
+}
+
+//every time the function is called all the abovve steps repeat
+and after the end the the context is deleted 
+//now this is repeated for the above code part 
+for result2
+
+//////
+call stack  principle is lifo
+
+
+
+
+
+
+one()push when isn use then pop
+global execution stack
